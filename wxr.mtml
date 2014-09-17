@@ -1,5 +1,5 @@
 <$mt:var name="folder_creator" value="admin"$>
-<$mt:var name="number_of_entries" value="500"$>
+<$mt:var name="number_of_entries" value="5"$>
 <$mt:var name="entries_offset" value="0"$>
 <$mt:var name="export_entries" value="1"$>
 <$mt:var name="export_folders" value="1"$>
@@ -27,15 +27,15 @@
     <wp:base_blog_url><$mt:BlogURL encode_xml="1"$></wp:base_blog_url>
     <mt:Categories>
         <wp:category>
-            <wp:category_nicename><$mt:CategoryLabel encode_xml="1"$></wp:category_nicename>
+            <wp:category_nicename><$mt:CategoryLabel replace=" ","-" encode_xml="1" encode_url="1"$></wp:category_nicename>
             <wp:category_parent><mt:ParentCategory><$mt:CategoryID$></mt:ParentCategory></wp:category_parent>
             <wp:cat_name><![CDATA[<$mt:CategoryLabel encode_xml="1"$>]]></wp:cat_name>
         </wp:category>
     </mt:Categories>
     <mt:Tags>
         <wp:tag>
-            <wp:tag_slug><$mt:TagName replace=" ","-" encode_xml="1"$></wp:tag_slug>
-            <wp:tag_name><![CDATA["<$mt:TagName encode_xml="1"$>"]]></wp:tag_name>
+            <wp:tag_slug><$mt:TagName replace=" ","-" encode_xml="1" encode_url="1"$></wp:tag_slug>
+            <wp:tag_name><![CDATA[<$mt:TagName encode_xml="1"$>]]></wp:tag_name>
         </wp:tag>
     </mt:Tags>
     <mt:If name="export_entries">
@@ -48,14 +48,14 @@
         <mt:If tag="EntryCategory">
             <mt:EntryCategories>
             <category><![CDATA[<$mt:CategoryLabel encode_xml="1"$>]]></category>
-            <category domain="category" nicename="<$mt:CategoryLabel replace=" ","-" encode_xml="1"$>"><![CDATA[<$mt:CategoryLabel encode_xml="1"$>]]></category>
+            <category domain="category" nicename="<$mt:CategoryLabel replace=" ","-" encode_xml="1" encode_url="1"$>"><![CDATA[<$mt:CategoryLabel encode_xml="1"$>]]></category>
             </mt:EntryCategories>
         <mt:Else>
             <category><![CDATA[Dailies]]></category>
         </mt:If>
         <mt:EntryTags>
             <category domain="tag"><![CDATA[<$mt:TagName encode_xml="1"$>]]></category>
-            <category domain="tag" nicename="<$mt:TagName replace=" ","-" encode_xml="1"$>"><![CDATA[<$mt:TagName encode_xml="1"$>]]></category>
+            <category domain="tag" nicename="<$mt:TagName replace=" ","-" encode_xml="1" encode_url="1"$>"><![CDATA[<$mt:TagName encode_xml="1"$>]]></category>
         </mt:EntryTags>
 
         <guid isPermaLink="false"><$mt:EntryPermalink encode_xml="1"$></guid>
