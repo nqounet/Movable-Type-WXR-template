@@ -19,7 +19,7 @@
     <title><$mt:BlogName encode_xml="1"$></title>
     <link><$mt:BlogURL encode_xml="1"$></link>
     <description><$mt:BlogDescription encode_xml="1"$></description>
-    <pubDate><$mt:Date format="%Y-%m-%d %H:%M:%S" utc="1" encode_xml="1"$></pubDate>
+    <pubDate><$mt:Date format_name="iso8601"$></pubDate>
     <generator><$mt:ProductName encode_xml="1"$><$mt:Version encode_xml="1"$></generator>
     <language><$mt:BlogLanguage encode_xml="1"$></language>
     <wp:wxr_version>1.0</wp:wxr_version>
@@ -43,7 +43,7 @@
     <item>
         <title><$mt:EntryTitle encode_xml="1"$></title>
         <link><$mt:EntryPermalink encode_xml="1"$></link>
-        <pubDate><$mt:EntryDate format="%Y-%m-%d %H:%M:%S" encode_xml="1"$></pubDate>
+        <pubDate><$mt:EntryDate format_name="iso8601"$></pubDate>
         <dc:creator><![CDATA[<$mt:EntryAuthor encode_xml="1"$>]]></dc:creator>
         <mt:If tag="EntryCategory">
             <mt:EntryCategories>
@@ -97,7 +97,7 @@
     <item>
         <title><$mt:FolderLabel encode_xml="1"$></title>
         <link><$mt:BlogURL encode_xml="1"$><$mt:FolderPath encode_xml="1"$></link>
-        <pubDate><mt:Pages limit="1"><$mt:PageDate format="%Y-%m-%d %H:%M:%S" encode_xml="1"$></mt:Pages></pubDate>
+        <pubDate><mt:Pages limit="1"><$mt:PageDate format_name="iso8601"$></mt:Pages></pubDate>
         <dc:creator><![CDATA[<$mt:var name="folder_creator" encode_xml="1"$>]]></dc:creator>
         <guid isPermaLink="false"><$mt:BlogURL encode_xml="1"$><$mt:FolderPath encode_xml="1"$></guid>
         <description></description>
