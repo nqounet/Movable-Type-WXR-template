@@ -27,14 +27,14 @@
     <wp:base_blog_url><$mt:BlogURL encode_xml="1"$></wp:base_blog_url>
     <mt:Categories>
         <wp:category>
-            <wp:category_nicename><$mt:CategoryLabel replace=" ","-" encode_xml="1" encode_url="1"$></wp:category_nicename>
+            <wp:category_nicename><$mt:CategoryLabel replace=" ","-" encode_url="1"$></wp:category_nicename>
             <wp:category_parent><mt:ParentCategory><$mt:CategoryID$></mt:ParentCategory></wp:category_parent>
             <wp:cat_name><![CDATA[<$mt:CategoryLabel encode_xml="1"$>]]></wp:cat_name>
         </wp:category>
     </mt:Categories>
     <mt:Tags>
         <wp:tag>
-            <wp:tag_slug><$mt:TagName replace=" ","-" encode_xml="1" encode_url="1"$></wp:tag_slug>
+            <wp:tag_slug><$mt:TagName replace=" ","-" encode_url="1"$></wp:tag_slug>
             <wp:tag_name><![CDATA[<$mt:TagName encode_xml="1"$>]]></wp:tag_name>
         </wp:tag>
     </mt:Tags>
@@ -48,19 +48,19 @@
         <mt:If tag="EntryCategory">
             <mt:EntryCategories>
             <category><![CDATA[<$mt:CategoryLabel encode_xml="1"$>]]></category>
-            <category domain="category" nicename="<$mt:CategoryLabel replace=" ","-" encode_xml="1" encode_url="1"$>"><![CDATA[<$mt:CategoryLabel encode_xml="1"$>]]></category>
+            <category domain="category" nicename="<$mt:CategoryLabel replace=" ","-" encode_url="1"$>"><![CDATA[<$mt:CategoryLabel encode_xml="1"$>]]></category>
             </mt:EntryCategories>
         <mt:Else>
             <category><![CDATA[Dailies]]></category>
         </mt:If>
         <mt:EntryTags>
             <category domain="tag"><![CDATA[<$mt:TagName encode_xml="1"$>]]></category>
-            <category domain="tag" nicename="<$mt:TagName replace=" ","-" encode_xml="1" encode_url="1"$>"><![CDATA[<$mt:TagName encode_xml="1"$>]]></category>
+            <category domain="tag" nicename="<$mt:TagName replace=" ","-" encode_url="1"$>"><![CDATA[<$mt:TagName encode_xml="1"$>]]></category>
         </mt:EntryTags>
 
         <guid isPermaLink="false"><$mt:EntryPermalink encode_xml="1"$></guid>
         <description></description>
-        <content:encoded><mt:Section encode_xml="1"><$mt:EntryBody$><mt:EntryIfExtended><!--more--><$mt:EntryMore$></mt:EntryIfExtended></mt:Section></content:encoded>
+        <content:encoded><mt:Section encode_xml="1"><$mt:EntryBody decode_html="1"$><mt:EntryIfExtended><!--more--><$mt:EntryMore decode_html="1"$></mt:EntryIfExtended></mt:Section></content:encoded>
         <excerpt:encoded><$mt:EntryExcerpt no_generate="1" encode_xml="1"$></excerpt:encoded>
         <wp:post_id><$mt:EntryID encode_xml="1"$></wp:post_id>
         <wp:post_date><$mt:EntryDate format="%Y-%m-%d %H:%M:%S" encode_xml="1"$></wp:post_date>
